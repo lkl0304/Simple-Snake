@@ -5,23 +5,23 @@ using namespace std;
 void Info(int num)
 {
     goxy(32,0); Color(Hc,255);
-    cout << "¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö";
+    cout << "â– â– â– â– â– â– â– â– â– â– â– â– â– â– ";
     Color(Hc,15);   goxy(35,5);
-    cout << "WÉÏ SÏÂ A×ó DÓÒ";
+    cout << "Wä¸Š Sä¸‹ Aå·¦ Då³";
     goxy(34,7);
-    cout << "¿Õ¸ñÔÝÍ£  BÖØÐÂ¿ªÊ¼";
+    cout << "ç©ºæ ¼æš‚åœ  Bé‡æ–°å¼€å§‹";
     goxy(36,16);
-    cout << "×î¸ß¼ÇÂ¼£º";
+    cout << "æœ€é«˜è®°å½•ï¼š";
     Color(Hc,12);   cout << num;
     Color(Hc,15);
     goxy(36,18);
-    cout << "µ±Ç°µÃ·Ö£º" << 0;
+    cout << "å½“å‰å¾—åˆ†ï¼š" << 0;
     goxy(36,25);
-    cout << "ÉßÉí³¤¶È£º" << 3;
+    cout << "è›‡èº«é•¿åº¦ï¼š" << 3;
     goxy(35,27);
-    cout << "ÓÎÏ·ÒÑ¿ªÊ¼ " << 0 << " Ãë";
+    cout << "æ¸¸æˆå·²å¼€å§‹ " << 0 << " ç§’";
     goxy(32,31); Color(Hc,255);
-    cout << "¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö";
+    cout << "â– â– â– â– â– â– â– â– â– â– â– â– â– â– ";
     Color(Hc,000);
 }
 void set_sc(Score &S,int *sc,int sl)
@@ -39,7 +39,7 @@ void set_sc(Score &S,int *sc,int sl)
                 Color(Hc,14);
             else
                 Color(Hc,000);
-            cout << " ´òÆÆ¼ÇÂ¼ÁË£¡£¡£¡";
+            cout << " æ‰“ç ´è®°å½•äº†ï¼ï¼ï¼";
         }
     }
     goxy(41,18);    Color(Hc,15);
@@ -63,26 +63,26 @@ int main()
         if(!Sk.fdstatus()){
             Sk.newfood();
         }
-        Sleep(300 - Sk.getlen()*5);  //¿ØÖÆÉßÔË¶¯ËÙ¶È
+        Sleep(300 - Sk.getlen()*5);  //æŽ§åˆ¶è›‡è¿åŠ¨é€Ÿåº¦
         if (kbhit()){
             ch = getch();
         }
         Sk.setfx(ch);
         goxy(40,27);    Color(Hc,15);
-        cout << " " << (int)(time(NULL) - start) << " Ãë";
+        cout << " " << (int)(time(NULL) - start) << " ç§’";
         if(ch == 32){
-            goxy(37,10);    Color(Hc,14);   cout << "ÔÝ  Í£";
+            goxy(37,10);    Color(Hc,14);   cout << "æš‚  åœ";
             continue;
         }else if(ch == 'B' || ch == 'b'){
             goto restart;
         }
-        goxy(37,10);    Color(Hc,10);   cout << "ÓÎÏ·ÖÐ";
+        goxy(37,10);    Color(Hc,10);   cout << "æ¸¸æˆä¸­";
         Sk.smove();
         if(Sk.pd_over())
         {
             goxy(Xx/2 - 3,Yy/2);
             cout << " GAME OVER ";
-            goxy(36,10);    Color(Hc,12);   cout << " ÓÎÏ·½áÊø";
+            goxy(36,10);    Color(Hc,12);   cout << " æ¸¸æˆç»“æŸ";
             break;
         }
 
@@ -91,23 +91,28 @@ int main()
         if(slen > 50){
             goxy(34,20);    Color(Hc,9);
             if(slen > 53) Color(Hc,000);
-            cout << "ÌìÄÄ ÄãÕâÊÇÊ²Ã´ÊÖËÙ£¡";
+            cout << "å¤©å“ª ä½ è¿™æ˜¯ä»€ä¹ˆæ‰‹é€Ÿï¼";
         }
         if(slen > 65){
             goxy(34,20);
             if(slen > 63) Color(Hc,000);
-            cout << "ÎÔ²Û ÄãÒÑ¾­³¬Ô½ÉñÁË£¡";
+            cout << "å§æ§½ ä½ å·²ç»è¶…è¶Šç¥žäº†ï¼";
         }
         if(slen > 95){
             goxy(33,20);
-            cout << "¾ø¶Ô²»»áÓÐÈË±ÈÄã¸üÀ÷º¦ÁË£¡";
+            cout << "ç»å¯¹ä¸ä¼šæœ‰äººæ¯”ä½ æ›´åŽ‰å®³äº†ï¼";
         }
         goxy(41,25); Color(Hc,15);    cout << slen;
     }
-    getch();
-    ch = getch();
-    if(ch == 'b' || ch == 'B')
-        goto restart;
+    reb:
+        ch = getch();
+        if(ch == 'b' || ch == 'B'){
+            goto restart;
+
+        }else if(ch == 'w' || ch == 'W' || ch == 's' || ch == 'S' || ch == 'a' || ch == 'A' || ch == 'd' || ch == 'D')
+        {
+            goto reb;
+        }
     getch();
     return 0;
 }
