@@ -63,7 +63,7 @@ int main()
         if(!Sk.fdstatus()){
             Sk.newfood();
         }
-        Sleep(300 - Sk.getlen()*5);  //控制蛇运动速度
+        Sleep(400 - Sk.getlen()*5);  //控制蛇运动速度
         if (kbhit()){
             ch = getch();
         }
@@ -88,17 +88,17 @@ int main()
 
         int slen = Sk.getlen();
         set_sc(Sr,s,slen);
-        if(slen > 50){
+        if(slen > 45){
             goxy(34,20);    Color(Hc,9);
-            if(slen > 53) Color(Hc,000);
+            if(slen > 48) Color(Hc,000);
             cout << "天哪 你这是什么手速！";
         }
-        if(slen > 65){
+        if(slen > 54){
             goxy(34,20);
-            if(slen > 63) Color(Hc,000);
+            if(slen > 57) Color(Hc,000);
             cout << "卧槽 你已经超越神了！";
         }
-        if(slen > 95){
+        if(slen > 60){
             goxy(33,20);
             cout << "绝对不会有人比你更厉害了！";
         }
