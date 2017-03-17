@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1489686787 source:e:\代码源文件\贪吃蛇\main.cpp
+	"snake.h"
+	"score.h"
+	<ctime>
+
+1489638468 e:\代码源文件\贪吃蛇\snake.h
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<conio.h>
+	<windows.h>
+
+1489685551 e:\代码源文件\贪吃蛇\score.h
+	<fstream>
+
